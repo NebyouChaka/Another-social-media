@@ -11,19 +11,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-
-
-
-
-
-//  DATABASE_URL = mongodb;//localhost:27017/nodeapi
-// SECRET = ASHDFKLAHSD2323
-// e812i830LWgZdSge
-// mongodb+srv://nebyouchaka:kukuloveme1984K@nodeapi.49fodbw.mongodb.net/test
-// // mongodb://kaloraat:dhungel8@ds257054.mlab.com:57054/nodeapi
-// // MONGO_URI= mongodb://localhost/nodeapi
- //mongodb+srv;//admin:<kukuloveme1984K@messenger.r6sgdqk.mongodb.net/test
-// mongoose
 const PORT = process.env.PORT || 8080
 
 mongoose.set('strictQuery', true)
