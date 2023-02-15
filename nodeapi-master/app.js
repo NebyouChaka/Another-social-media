@@ -24,14 +24,18 @@ dotenv.config();
 // // MONGO_URI= mongodb://localhost/nodeapi
  //mongodb+srv;//admin:<kukuloveme1984K@messenger.r6sgdqk.mongodb.net/test
 // mongoose
-   mongoose.connect(process.env.DATABASE_URL, {
-        useNewUrlParser: true
-    })
-    .then(() => console.log('Nebyou DB Connected'));
+const PORT = process.env.PORT || 8080
 
-mongoose.connection.on('error', err => {
-    console.log(`DB connection error: ${err.message}`);
-});
+mongoose.set('strictQuery', true)
+ mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    app.listen(PORT, () => console.log(` server is connected: ${PORT}`))
+
+    // User.insertMany(users)
+    // Post.insertMany(posts)
+}).catch((error) => console.log(`${error} did not connect`))
 
 // bring in routes
 const postRoutes = require('./routes/post');
@@ -65,7 +69,7 @@ app.use(function(err, req, res, next) {
     }
 });
 
-const port = process.env.PORT || 8000;
-app.listen(port, () => {
-    console.log(`A Node Js API is listening on port: ${port}`);
-});
+// const port = process.env.PORT || 8000;
+// app.listen(port, () => {
+//     console.log(`A Node Js API is listening on port: ${port}`);
+// });
