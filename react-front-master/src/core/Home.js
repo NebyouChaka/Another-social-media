@@ -5,7 +5,7 @@ const Home = () => (
   <div>
     <div className="jumbotron">
       <h2 className="font-weight-bold">
-       Hive
+       Hive-Social
       </h2>
       <p className="lead">
        Real-time interactions, group conversations, or shared interests.

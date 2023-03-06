@@ -82,7 +82,16 @@ class Signin extends Component {
     };
 
     signinForm = (email, password, recaptcha) => (
+        
         <form>
+                  <div className="jumbotron1">
+      <h2 className="font-weight-bold">
+       Hive-Social 
+      </h2>
+      <p className="lead">
+       Real-time interactions, group conversations, or shared interests.
+      </p>
+    </div>
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input
@@ -138,8 +147,9 @@ class Signin extends Component {
         }
 
         return (
+            
             <div className="container">
-                <h2 className="mt-5 mb-5">SignIn</h2>
+                <h2 className="mt-5 mb-5 mamo">SignIn</h2>
                 <hr />
                 <SocialLogin />
 
@@ -174,7 +184,9 @@ class Signin extends Component {
                 </p>
             </div>
         );
+        
     }
+    
 }
 
 export default Signin;

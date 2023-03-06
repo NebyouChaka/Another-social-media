@@ -82,7 +82,9 @@ class Signup extends Component {
     };
 
     signupForm = (name, email, password, recaptcha) => (
+        
         <form>
+       
             <div className="form-group">
                 <label className="text-muted">Name</label>
                 <input
@@ -130,6 +132,7 @@ class Signup extends Component {
                 Submit
             </button>
         </form>
+        
     );
 
     render() {

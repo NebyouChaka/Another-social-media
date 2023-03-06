@@ -45,7 +45,7 @@ export const remove = (userId, token) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/users`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/api/users`, {
         method: "GET"
     })
         .then(response => {

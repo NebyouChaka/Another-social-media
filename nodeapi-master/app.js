@@ -8,21 +8,17 @@ const expressValidator = require('express-validator');
 const fs = require('fs');
 const cors = require('cors');
 const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config()
 
+mongoose
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true
+    })
+    .then(() => console.log('DB Connected'));
 
-const PORT = process.env.PORT || 8080
-
-mongoose.set('strictQuery', true)
- mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    app.listen(PORT, () => console.log(` server is connected: ${PORT}`))
-
-    // User.insertMany(users)
-    // Post.insertMany(posts)
-}).catch((error) => console.log(`${error} did not connect`))
+mongoose.connection.on('error', err => {
+    console.log(`DB connection error: ${err.message}`);
+});
 
 // bring in routes
 const postRoutes = require('./routes/post');
@@ -38,6 +34,7 @@ app.get('/api', (req, res) => {
         }
         const docs = JSON.parse(data);
         res.json(docs);
+        console.log(docs)
     });
 });
 
@@ -56,7 +53,8 @@ app.use(function(err, req, res, next) {
     }
 });
 
-// const port = process.env.PORT || 8000;
-// app.listen(port, () => {
-//     console.log(`A Node Js API is listening on port: ${port}`);
-// });
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
+    console.log(`A Node Js API is listening on port: ${port}`);
+});
+app.get('/status',(req, res, next)=> res.sendStatus(200));

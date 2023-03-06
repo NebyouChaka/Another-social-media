@@ -1,0 +1,35 @@
+
+body{
+    background-image:url("./images/beeHive.jpg") ;
+     background-size: cover;
+    background-repeat: no-repeat;
+   
+    
+}
+.jumbotron{
+    /* background-image: url("./images/beeHive.jpg"); */
+    background-color: rgba(181, 200, 12, 0.068);
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    height: auto;
+    position: relative;
+    /* opacity: 0.5; */
+    
+}
+.font-weight-bold, .lead {
+    color: white;
+    font-size:30px;
+    text-shadow: rgb(4, 0, 0) 2px 3px 3px;
+}
+.container{
+    margin-top: 330px;
+    width: 30%;
+    
+}
+.text-muted {
+  color: white !important;
+}
+.form-control {
+    background-color: white;
+}
